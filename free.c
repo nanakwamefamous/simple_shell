@@ -42,16 +42,16 @@ void free_tokens(char **pointer)
  */
 void free_path(void)
 {
-	if (environ != NULL)
+	if (my_environ != NULL)
 	{
 		size_t n = 0;
 
-		while (MY_environ[n] != NULL)
+		while (my_environ[n] != NULL)
 		{
-			if (_strncmp(MY_environ[n], "PATH=", 5) == 0)
+			if (_strncmp(my_environ[n], "PATH=", 5) == 0)
 			{
-				free(MY_environ[n]);
-				MY_environ[n] = NULL;
+				free(my_environ[n]);
+				my_environ[n] = NULL;
 				break;
 			}
 			n++;
