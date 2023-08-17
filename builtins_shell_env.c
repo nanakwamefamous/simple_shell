@@ -9,9 +9,9 @@ int shell_env(void)
 {
 	int n;
 
-	for ( n = 0; environ[ n ]; n++)
+	for ( n = 0; environ[n]; n++)
 	{
-		_puts(environ[ n ]);
+		_puts(environ[n]);
 		_putchar('\n');
 	}
 
