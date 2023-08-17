@@ -46,7 +46,7 @@ void free_path(void)
 	{
 		size_t n = 0;
 
-		while (my_environ[n] != NULL)
+		while (environ[n] != NULL)
 		{
 			if (_strncmp(my_environ[n], "PATH=", 5) == 0)
 			{
