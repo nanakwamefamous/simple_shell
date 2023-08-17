@@ -44,7 +44,8 @@ int _strcmp(const char *str1, const char *str2)
  * @n: Maximum number of characters to compare.
  *
  * Return: 0 if the strings are equal up to n characters, negative value
- *         if str1 is less than str2, or positive value if str1 is greater than str2.
+ *         if str1 is less than str2, or positive value if str1
+ * is greater than str2.
  */
 int _strncmp(const char *str1, const char *str2, size_t n)
 {
@@ -113,9 +114,7 @@ char *_strchr(char *string, char character)
 	{
 		if (*string == character)
 			return (string);
-		string++;
-	}
-	
+		string++;}
 	if (*string == character)
 		return (string);
 	return (NULL);
