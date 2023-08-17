@@ -1,29 +1,29 @@
 #include "shell.h"
 
 /**
- * check_for_builtin - checks if the command is a builtin.
- * @args_array: arguments array
+ * checkforbuiltin - checks if the command is a builtin.
+ * @argsarray: arguments array
  *
  * Return: 1 if command is a builtin, 0 otherwise
  */
-int check_for_builtin(char **args_array)
+int checkforbuiltin(char **argsarray)
 {
-	if (!args_array[0])
+	if (!argsarray[0])
 		return (0);
-	if (_strcmp_(args_array[0], "exit"))
-		shell_exit(args_array);
-	else if (_strcmp_(args_array[0], "env"))
-		shell_env();
-	else if (_strcmp_(args_array[0], "setenv"))
-		shell_setenv(args_array);
-	else if (_strcmp_(args_array[0], "unsetenv"))
-		shell_unsetenv(args_array);
-	else if (_strcmp_(args_array[0], "help"))
-		shell_help();
-	else if (_strcmp_(args_array[0], "cd"))
-		shell_cd(args_array);
-	else if (_strcmp_(args_array[0], "clear"))
-		shell_clear(args_array);
+	if (_strcmp(argsarray[0], "exit"))
+		shellexit(argsarray);
+	else if (_strcmp(argsarray[0], "env"))
+		shellenv();
+	else if (_strcmp(argsarray[0], "setenv"))
+		shellsetenv(argsarray);
+	else if (_strcmp(argsarray[0], "unsetenv"))
+		shellunsetenv(argsarray);
+	else if (_strcmp(argsarray[0], "help"))
+		shellhelp();
+	else if (_strcmp(argsarray[0], "cd"))
+		shellcd(argsarray);
+	else if (_strcmp(argsarray[0], "clear"))
+		shellclear(argsarray);
 	else
 		return (0);
 	return (1);
