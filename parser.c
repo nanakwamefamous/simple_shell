@@ -39,7 +39,7 @@ char **tokenize(char *string, const char *delimiter)
 
 /**
  * tokenize_input - splits a user input string into tokens with tokenize().
- * 
+ *
  * @my_input: the user input string to be tokenized.
  *
  * Return: an array of pointers to the tokens, or NULL if an error occurs
