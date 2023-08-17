@@ -11,19 +11,19 @@ int checkforbuiltin(char **argsarray)
 	if (!argsarray[0])
 		return (0);
 	if (_strcmp(argsarray[0], "exit"))
-		shellexit(argsarray);
+		shell_exit(argsarray);
 	else if (_strcmp(argsarray[0], "env"))
-		shellenv();
+		shell_env();
 	else if (_strcmp(argsarray[0], "setenv"))
-		shellsetenv(argsarray);
+		shell_setenv(argsarray);
 	else if (_strcmp(argsarray[0], "unsetenv"))
-		shellunsetenv(argsarray);
+		shell_unsetenv(argsarray);
 	else if (_strcmp(argsarray[0], "help"))
-		shellhelp();
+		shell_help();
 	else if (_strcmp(argsarray[0], "cd"))
-		shellcd(argsarray);
+		shell_cd(argsarray);
 	else if (_strcmp(argsarray[0], "clear"))
-		shellclear(argsarray);
+		shell_clear(argsarray);
 	else
 		return (0);
 	return (1);
