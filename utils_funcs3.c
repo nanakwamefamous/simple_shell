@@ -2,7 +2,7 @@
 
 /**
  * _atoi - Converts a string to an integer.
- * @string:  string 
+ * @string:  string
  *
  * Return: string.
  */
@@ -71,7 +71,8 @@ char *_memcpy(char *destination, char *source, unsigned int n)
  *
  * Return: pointer to da ol'block nameen.
  */
-void *_realloc(void *pointer, unsigned int my_old_size, unsigned int my_new_size)
+void *_realloc(void *pointer, unsigned int my_old_size, unsigned
+int my_new_size)
 {
 	char *k;
 
