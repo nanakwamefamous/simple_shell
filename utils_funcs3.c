@@ -37,10 +37,10 @@ int _atoi(const char *string)
  */
 char *_memset(char *str, char byte, unsigned int n)
 {
-	unsigned int n;
+	unsigned int p;
 
-	for (n = 0; n < n; n++)
-		str[n] = byte;
+	for (p = 0; p < n; p++)
+		str[p] = byte;
 	return (str);
 }
 
@@ -56,10 +56,10 @@ char *_memset(char *str, char byte, unsigned int n)
 
 char *_memcpy(char *destination, char *source, unsigned int n)
 {
-	unsigned int n;
+	unsigned int p;
 
-	for (n = 0; n < n; n++)
-		destination[n] = source[n];
+	for (p = 0; p < n; p++)
+		destination[p] = source[p];
 	return (destination);
 }
 
