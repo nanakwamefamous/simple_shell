@@ -42,7 +42,7 @@ void free_tokens(char **pointer)
  */
 void free_path(void)
 {
-	if (MY_environ != NULL)
+	if (environ != NULL)
 	{
 		size_t n = 0;
 
