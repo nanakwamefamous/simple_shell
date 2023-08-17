@@ -6,7 +6,7 @@
  * @cmd:  `command` string to look for.
  *
  * Return: the full path (success) if it is found, or NULL if it is not 
- *         found (failure).
+ * found (failure).
 */
 char *find_in_path(char *cmd)
 {
