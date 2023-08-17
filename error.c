@@ -2,7 +2,7 @@
 
 /**
  * _puts - is to Prints a string to the standard output stream.
- * @string: The string 
+ * @string: The string
  *
  * Return: Void
  */
