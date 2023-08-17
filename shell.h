@@ -76,7 +76,7 @@ void _puterror(char *error);
 int _strlen(const char *);
 int _strcmp(const char *str1, const char *str2);
 int _strncmp(const char *str1, const char *str2, size_t n);
-char *_strstr(char *my_haystack, char *my_haystack);
+char *_strstr(char *my_haystack, char *my_needle);
 char *_strchr(char *str, char character);
 
 /* utils_funcs2.c */
