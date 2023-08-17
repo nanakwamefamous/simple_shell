@@ -114,7 +114,7 @@ char *_strchr(char *string, char character)
 	{
 		if (*string == character)
 			return (string);
-		string++;}
+		string++; }
 	if (*string == character)
 		return (string);
 	return (NULL);
