@@ -14,6 +14,8 @@ int execute(char **args_array)
 
 	if (args_array == NULL || *args_array == NULL)
 		return (MY_status);
+	if (check_for_builtin(args_array))
+		return (MY_status);
 
 	IDs = fork();
 	if (IDs < 0)
