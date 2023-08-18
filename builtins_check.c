@@ -14,9 +14,7 @@ int check_for_builtin(char **args_array)
 		shell_exit(args_array);
 	else if (_strcmp(args_array[0], "env"))
 		shell_env();
-	else if (_strcmp(args_array[0], "execute"))
-		execute();
-	else if (_strcmp(argsarray[0], "setenv"))
+	else if (_strcmp(args_array[0], "setenv"))
 		shell_setenv(args_array);
 	else if (_strcmp(args_array[0], "unsetenv"))
 		shell_unsetenv(args_array);
