@@ -33,7 +33,7 @@ void *get_line(void);
 
 /* built-in funcs */
 int check_for_builtin(char **args_array);
-int execute_buitlin(char *command, char **args_array);
+int execute(char **args_array);
 void shell_help(void);
 void shell_exit(char **args_array);
 void shell_cd(char **args_array);
