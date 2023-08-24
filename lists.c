@@ -77,7 +77,7 @@ list_t *add_node_end(list_t **head, const char *str, int num)
 /**
  * print_list_str - is to prints only the str element of a list_t
  * linked list
- * 
+ *
  * @h: is the pointer to first node
  *
  * Return: size of list
@@ -99,11 +99,11 @@ size_t print_list_str(const list_t *h)
 /**
  * delete_node_at_index - is to deletes node at given index
  * @head: is the address of pointer to first node
- * 
- * @index: is the index of node to delete
- * 
  *
- * Return: 1 on success, or 0 
+ * @index: is the index of node to delete
+ *
+ *
+ * Return: 1 on success, or 0
  */
 int delete_node_at_index(list_t **head, unsigned int index)
 {

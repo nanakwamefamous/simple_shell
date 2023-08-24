@@ -48,12 +48,12 @@ void ffree(char **pp)
 /**
  * _memset - is to fills memory with a constant byte
  * @s: is a  pointer to the memory area
- * 
+ *
  * @b: is a byte to fill *s with
- * 
+ *
  * @n: is a amount of bytes to be filled
- * 
- * 
+ *
+ *
  * Return: pointer to the memory area
  */
 char *_memset(char *s, char b, unsigned int n)

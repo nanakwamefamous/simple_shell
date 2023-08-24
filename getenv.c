@@ -2,11 +2,11 @@
 
 /**
  * get_environ - is to returns the string array copy of our environ
- * 
+ *
  * @info: is a Structure containing potential arguments.
- * 
+ *
  * function prototype.
- * 
+ *
  * Return: 0
  */
 char **get_environ(info_t *info)
@@ -22,12 +22,12 @@ char **get_environ(info_t *info)
 
 /**
  * _unsetenv - is to Remove an environment variable
- * 
- * @var: the string env var property 
+ *
+ * @var: the string env var property
  * @info: is a Structure containing potential arguments.
- * 
+ *
  * function prototype.
- *  Return: 1 on delete, or 0 
+ *  Return: 1 on delete, or 0
 
  */
 int _unsetenv(info_t *info, char *var)
@@ -58,7 +58,7 @@ int _unsetenv(info_t *info, char *var)
 /**
  * _setenv - is to Initialize a new environment variable,
  * or modify an existing one
- * 
+ *
  * @info: Structure containing potential arguments.
  * function prototype.
  * @var: is a string env var property

@@ -3,7 +3,7 @@
 /**
  * _myexit - is to exits the shell
  * @info: is Structure containing potential arguments.
- * 
+ *
  * Return: is to exits with a given exit status
  * (0) if info.argv[0] != "exit"
  */
@@ -11,7 +11,7 @@ int _myexit(info_t *info)
 {
 	int exitcheck;
 
-	if (info->argv[1]) 
+	if (info->argv[1])
 	{
 		exitcheck = _erratoi(info->argv[1]);
 		if (exitcheck == -1)
@@ -32,8 +32,8 @@ int _myexit(info_t *info)
 /**
  * _mycd - is to changes the current directory of the process
  * @info: Structure containing potential arguments.
- * 
- * 
+ *
+ *
  * Return 0
  */
 int _mycd(info_t *info)
@@ -83,8 +83,8 @@ int _mycd(info_t *info)
 /**
  * _myhelp - is to changes the current directory of the process
  * @info: is to Structure containing potential arguments.
- * 
- * 
+ *
+ *
  * function prototype
  * Return: Always 0
  */

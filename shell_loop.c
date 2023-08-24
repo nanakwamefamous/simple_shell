@@ -2,9 +2,9 @@
 
 /**
  * hsh - is to main shell loop
- * 
+ *
  * @info: is the parameter & return info struct
- * 
+ *
  * @av: is the argument vector from main()
  *
  * Return: 0 on success, 1 on error, or error code
@@ -50,9 +50,9 @@ int hsh(info_t *info, char **av)
  * @info: is the parameter & return info struct
  *
  * Return: -1 if builtin not found,
- * 	0 if builtin executed correctly,
- * 	1 if builtin found but not correctly executed,
- * 	2 if builtin signal an exit() from the process
+ * 0 if builtin executed correctly,
+ * 1 if builtin found but not correctly executed,
+ * 2 if builtin signal an exit() from the process
  */
 int find_builtin(info_t *info)
 {

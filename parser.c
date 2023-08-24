@@ -45,9 +45,9 @@ char *find_path(info_t *info, char *pathstr, char *cmd)
 
 /**
  * is_cmd - is to determines if a file is an executable command
- * 
+ *
  * @info: is the info struct
- * 
+ *
  * @path: is the path to the file
  *
  * Return: 1 if true, 0 otherwise

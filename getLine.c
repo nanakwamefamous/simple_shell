@@ -2,11 +2,11 @@
 
 /**
  * input_buf - is to buffers chained commands
- * 
+ *
  * @info: is a parameter struct
- * 
+ *
  * @buf: is a address of buffer
- * 
+ *
  * @len: is a address of len var
  *
  * Return: to return bytes read
@@ -16,7 +16,7 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 	ssize_t y = 0;
 	size_t len_p = 0;
 
-	if (!*len) 
+	if (!*len)
 	{
 		free(*buf);
 		*buf = NULL;
@@ -47,7 +47,7 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 
 /**
  * get_input - is to gets a line minus the newline
- * 
+ *
  * @info: is a parameter struct
  *
  * Return: to return bytes read
@@ -61,7 +61,7 @@ ssize_t get_input(info_t *info)
 
 	_putchar(BUF_FLUSH);
 	y = input_buf(info, &buf, &len);
-	if (y == -1) 
+	if (y == -1)
 		return (-1);
 	if (len)
 	{
@@ -69,7 +69,7 @@ ssize_t get_input(info_t *info)
 		p = buf + i;
 
 		check_chain(info, buf, &j, i, len);
-		while (j < len) 
+		while (j < len)
 		{
 			if (is_chain(info, buf, &j))
 				break;
@@ -95,7 +95,7 @@ ssize_t get_input(info_t *info)
  * @info: is a parameter struct
  * @buf: is a buffer
  * @i: is a size
- * 
+ *
  * Return: y
  */
 ssize_t read_buf(info_t *info, char *buf, size_t *i)
@@ -159,7 +159,7 @@ int _getline(info_t *info, char **ptr, size_t *length)
 
 /**
  * sigintHandler - is to blocks ctrl-C
- * 
+ *
  * @sig_num: is a signal number
  *
  * Return: be void

@@ -2,10 +2,10 @@
 
 /**
  * _eputs - is to prints an input string
- * 
+ *
  * @str: is a string to be printed
  *
- * 
+ *
  * Return: 0
  */
 void _eputs(char *str)
@@ -45,9 +45,9 @@ int _eputchar(char c)
 
 /**
  * _putfd - is to writes the character c to given fd
- * 
+ *
  * @c: is a character to print
- * 
+ *
  * @fd: The filedescriptor to write to
  *
  * Return: On success 1.

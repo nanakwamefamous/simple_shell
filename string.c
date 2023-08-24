@@ -44,7 +44,7 @@ int _strcmp(char *s1, char *s2)
 /**
  * starts_with - is to checks if needle starts with haystack
  * @haystack: is a string to search
- * 
+ *
  * @needle: is a substring to find
  *
  * Return: to address of next char of haystack or NULL
@@ -59,7 +59,7 @@ char *starts_with(const char *haystack, const char *needle)
 
 /**
  * _strlen - is to returns the length of a string
- * 
+ *
  * @s: is a string whose length to check
  *
  * Return: integer length of string

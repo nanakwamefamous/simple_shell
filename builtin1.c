@@ -47,7 +47,7 @@ int print_alias(list_t *node)
 }
 
 /**
- * _myhistory - is to displays the history list, 
+ * _myhistory - is to displays the history list,
  * with line numbers and starting at 0.
  * @info: Structure containing potential arguments.
  * function prototype.
