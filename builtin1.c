@@ -1,40 +1,6 @@
 #include "shell.h"
 
 /**
- * _myalias - is to mimics the alias builtin (man alias)
- * @info: Structure containing potential arguments.
- * function prototype.
- * Return: 0
- */
-int _myalias(info_t *info)
-{
-	int u = 0;
-	char *p = NULL;
-	list_t *node = NULL;
-
-	if (info->argc == 1)
-	{
-		node = info->alias;
-		while (node)
-		{
-			print_alias(node);
-			node = node->next;
-		}
-		return (0);
-	}
-	for (u = 1; info->argv[u]; u++)
-	{
-		p = _strchr(info->argv[u], '=');
-		if (p)
-			set_alias(info, info->argv[u]);
-		else
-			print_alias(node_starts_with(info->alias, info->argv[u], '='));
-	}
-
-	return (0);
-}
-
-/**
  * unset_alias - is to sets alias to string
  * @info: is parameter struct
  * @str: is  string alias
@@ -114,4 +80,36 @@ int set_alias(info_t *info, char *str)
 	return (add_node_end(&(info->alias), str, 0) == NULL);
 }
 
+/**
+ * _myalias - is to mimics the alias builtin (man alias)
+ * @info: Structure containing potential arguments.
+ * function prototype.
+ * Return: 0
+ */
+int _myalias(info_t *info)
+{
+	int u = 0;
+	char *p = NULL;
+	list_t *node = NULL;
 
+	if (info->argc == 1)
+	{
+		node = info->alias;
+		while (node)
+		{
+			print_alias(node);
+			node = node->next;
+		}
+		return (0);
+	}
+	for (u = 1; info->argv[u]; u++)
+	{
+		p = _strchr(info->argv[u], '=');
+		if (p)
+			set_alias(info, info->argv[u]);
+		else
+			print_alias(node_starts_with(info->alias, info->argv[u], '='));
+	}
+
+	return (0);
+}
