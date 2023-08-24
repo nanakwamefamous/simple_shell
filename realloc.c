@@ -58,10 +58,10 @@ void ffree(char **pp)
  */
 char *_memset(char *s, char b, unsigned int n)
 {
-	unsigned int n;
+	unsigned int v;
 
-	for (n = 0; n < n; n++)
-		s[n] = b;
+	for (v = 0; v < n; v++)
+		s[v] = b;
 	return (s);
 }
 
