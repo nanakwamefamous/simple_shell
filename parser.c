@@ -35,7 +35,7 @@ char *find_path(info_t *info, char *pathstr, char *cmd)
 			if (is_cmd(info, path))
 				return (path);
 			if (!pathstr[n])
-				breao;
+				break;
 			curr_pos = n;
 		}
 		n++;
