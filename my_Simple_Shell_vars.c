@@ -18,23 +18,23 @@ int myfun_replace_vars(info_t *info)
 		if (!myfun__strcmp(info->argv[n], "$?"))
 		{
 			myfun_replace_string(&(info->argv[n]),
-					_strdup(myfun_convert_number(info->status, 10, 0)));
+					myfun__strdup(myfun_convert_number(info->status, 10, 0)));
 			continue;
 		}
 		if (!myfun__strcmp(info->argv[n], "$$"))
 		{
 			myfun_replace_string(&(info->argv[n]),
-					_strdup(myfun_convert_number(getpid(), 10, 0)));
+					myfun__strdup(myfun_convert_number(getpid(), 10, 0)));
 			continue;
 		}
 		node = myfun_node_starts_with(info->env, &info->argv[n][1], '=');
 		if (node)
 		{
 			myfun_replace_string(&(info->argv[n]),
-					_strdup(myfun__strchr(node->str, '=') + 1));
+					myfun__strdup(myfun__strchr(node->str, '=') + 1));
 			continue;
 		}
-		myfun_replace_string(&info->argv[n], _strdup(""));
+		myfun_replace_string(&info->argv[n], myfun__strdup(""));
 
 	}
 	return (0);
@@ -99,7 +99,7 @@ int myfun_replace_alias(info_t *info)
 		p = myfun__strchr(node->str, '=');
 		if (!p)
 			return (0);
-		p = _strdup(p + 1);
+		p = myfun__strdup(p + 1);
 		if (!p)
 			return (0);
 		info->argv[0] = p;

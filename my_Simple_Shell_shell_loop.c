@@ -27,13 +27,13 @@ int myfun_hsh(info_t *info, char **av)
 			if (builtin_ret == -1)
 				myfun_find_cmd(info);
 		}
-		else if (interactive(info))
+		else if (myfun_interactive(info))
 			myfun__putchar('\n');
 		myfun_free_info(info, 0);
 	}
 	myfun_write_history(info);
 	myfun_free_info(info, 1);
-	if (!interactive(info) && info->status)
+	if (!myfun_interactive(info) && info->status)
 		exit(info->status);
 	if (builtin_ret == -2)
 	{
@@ -96,7 +96,7 @@ void myfun_find_cmd(info_t *info)
 		info->linecount_flag = 0;
 	}
 	for (i = 0, p = 0; info->arg[i]; i++)
-		if (!is_delim(info->arg[i], " \t\n"))
+		if (!myfun_is_delim(info->arg[i], " \t\n"))
 			p++;
 	if (!p)
 		return;
@@ -109,7 +109,7 @@ void myfun_find_cmd(info_t *info)
 	}
 	else
 	{
-		if ((interactive(info) || myfun__getenv(info, "PATH=")
+		if ((myfun_interactive(info) || myfun__getenv(info, "PATH=")
 					|| info->argv[0][0] == '/') && myfun_is_cmd(info, info->argv[0]))
 			myfun_fork_cmd(info);
 		else if (*(info->arg) != '\n')
