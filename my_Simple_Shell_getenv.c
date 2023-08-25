@@ -1,7 +1,6 @@
-#include "shell.h"
-
+#include "my_Simple_Shell_shell.h"
 /**
- * get_environ - is to returns the string array copy of our environ
+ * myfun_get_environ - is to returns the string array copy of our environ
  *
  * @info: is a Structure containing potential arguments.
  *
@@ -9,11 +8,11 @@
  *
  * Return: 0
  */
-char **get_environ(info_t *info)
+char **myfun_get_environ(info_t *info)
 {
 	if (!info->environ || info->env_changed)
 	{
-		info->environ = list_to_strings(info->env);
+		info->environ = myfun_list_to_strings(info->env);
 		info->env_changed = 0;
 	}
 
@@ -21,7 +20,7 @@ char **get_environ(info_t *info)
 }
 
 /**
- * _unsetenv - is to Remove an environment variable
+ * myfun__unsetenv - is to Remove an environment variable
  *
  * @var: the string env var property
  * @info: is a Structure containing potential arguments.
@@ -30,7 +29,7 @@ char **get_environ(info_t *info)
  *  Return: 1 on delete, or 0
 
  */
-int _unsetenv(info_t *info, char *var)
+int myfun__unsetenv(info_t *info, char *var)
 {
 	list_t *node = info->env;
 	size_t n = 0;
@@ -41,10 +40,10 @@ int _unsetenv(info_t *info, char *var)
 
 	while (node)
 	{
-		p = starts_with(node->str, var);
+		p = myfun_starts_with(node->str, var);
 		if (p && *p == '=')
 		{
-			info->env_changed = delete_node_at_index(&(info->env), n);
+			info->env_changed = myfun_delete_node_at_index(&(info->env), n);
 			n = 0;
 			node = info->env;
 			continue;
@@ -56,7 +55,7 @@ int _unsetenv(info_t *info, char *var)
 }
 
 /**
- * _setenv - is to Initialize a new environment variable,
+ * myfun__setenv - is to Initialize a new environment variable,
  * or modify an existing one
  *
  * @info: Structure containing potential arguments.
@@ -65,7 +64,7 @@ int _unsetenv(info_t *info, char *var)
  * @value: is a string env var value
  *  Return: 0
  */
-int _setenv(info_t *info, char *var, char *value)
+int myfun__setenv(info_t *info, char *var, char *value)
 {
 	char *buf = NULL;
 	list_t *node;
@@ -74,16 +73,16 @@ int _setenv(info_t *info, char *var, char *value)
 	if (!var || !value)
 		return (0);
 
-	buf = malloc(_strlen(var) + _strlen(value) + 2);
+	buf = malloc(myfun__strlen(var) + myfun__strlen(value) + 2);
 	if (!buf)
 		return (1);
-	_strcpy(buf, var);
-	_strcat(buf, "=");
-	_strcat(buf, value);
+	myfun__strcpy(buf, var);
+	myfun__strcat(buf, "=");
+	myfun__strcat(buf, value);
 	node = info->env;
 	while (node)
 	{
-		p = starts_with(node->str, var);
+		p = myfun_starts_with(node->str, var);
 		if (p && *p == '=')
 		{
 			free(node->str);
@@ -93,7 +92,7 @@ int _setenv(info_t *info, char *var, char *value)
 		}
 		node = node->next;
 	}
-	add_node_end(&(info->env), buf, 0);
+	myfun_add_node_end(&(info->env), buf, 0);
 	free(buf);
 	info->env_changed = 1;
 	return (0);

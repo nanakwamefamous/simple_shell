@@ -1,12 +1,11 @@
-#include "shell.h"
-
+#include "my_Simple_Shell_shell.h"
 /**
- * replace_vars - is to replaces vars in the tokenized string
+ * myfun_replace_vars - is to replaces vars in the tokenized string
  * @info: is a parameter struct
  *
  * Return: 1 if replaced, or 0
  */
-int replace_vars(info_t *info)
+int myfun_replace_vars(info_t *info)
 {
 	int n = 0;
 	list_t *node;
@@ -16,26 +15,26 @@ int replace_vars(info_t *info)
 		if (info->argv[n][0] != '$' || !info->argv[n][1])
 			continue;
 
-		if (!_strcmp(info->argv[n], "$?"))
+		if (!myfun__strcmp(info->argv[n], "$?"))
 		{
-			replace_string(&(info->argv[n]),
-					_strdup(convert_number(info->status, 10, 0)));
+			myfun_replace_string(&(info->argv[n]),
+					_strdup(myfun_convert_number(info->status, 10, 0)));
 			continue;
 		}
-		if (!_strcmp(info->argv[n], "$$"))
+		if (!myfun__strcmp(info->argv[n], "$$"))
 		{
-			replace_string(&(info->argv[n]),
-					_strdup(convert_number(getpid(), 10, 0)));
+			myfun_replace_string(&(info->argv[n]),
+					_strdup(myfun_convert_number(getpid(), 10, 0)));
 			continue;
 		}
-		node = node_starts_with(info->env, &info->argv[n][1], '=');
+		node = myfun_node_starts_with(info->env, &info->argv[n][1], '=');
 		if (node)
 		{
-			replace_string(&(info->argv[n]),
-					_strdup(_strchr(node->str, '=') + 1));
+			myfun_replace_string(&(info->argv[n]),
+					_strdup(myfun__strchr(node->str, '=') + 1));
 			continue;
 		}
-		replace_string(&info->argv[n], _strdup(""));
+		myfun_replace_string(&info->argv[n], _strdup(""));
 
 	}
 	return (0);
@@ -44,7 +43,7 @@ int replace_vars(info_t *info)
 
 
 /**
- * check_chain - is to  checks we should continue chaining
+ * myfun_check_chain - is to  checks we should continue chaining
  * based on last status
  * @info: is a parameter struct
  * @buf: is a char buffer
@@ -54,7 +53,7 @@ int replace_vars(info_t *info)
  *
  * Return: 0
  */
-void check_chain(info_t *info, char *buf, size_t *p, size_t n, size_t len)
+void myfun_check_chain(info_t *info, char *buf, size_t *p, size_t n, size_t len)
 {
 	size_t o = *p;
 
@@ -79,13 +78,13 @@ void check_chain(info_t *info, char *buf, size_t *p, size_t n, size_t len)
 }
 
 /**
- * replace_alias - is to replaces an aliases in the
+ * myfun_replace_alias - is to replaces an aliases in the
  * tokenized string
  * @info: is a parameter struct
  *
  * Return: 1 if replaced, or 0
  */
-int replace_alias(info_t *info)
+int myfun_replace_alias(info_t *info)
 {
 	int n;
 	list_t *node;
@@ -93,11 +92,11 @@ int replace_alias(info_t *info)
 
 	for (n = 0; n < 10; n++)
 	{
-		node = node_starts_with(info->alias, info->argv[0], '=');
+		node = myfun_node_starts_with(info->alias, info->argv[0], '=');
 		if (!node)
 			return (0);
 		free(info->argv[0]);
-		p = _strchr(node->str, '=');
+		p = myfun__strchr(node->str, '=');
 		if (!p)
 			return (0);
 		p = _strdup(p + 1);
@@ -109,14 +108,14 @@ int replace_alias(info_t *info)
 }
 
 /**
- * is_chain - is to test if current char in buffer is a chain delimeter
+ * myfun_is_chain - is to test if current char in buffer is a chain delimeter
  * @info: parameter struct
  * @buf: is a char buffer
  * @p: is the address of current position in buf
  *
  * Return: 1 if chain delimeter, or  0
  */
-int is_chain(info_t *info, char *buf, size_t *p)
+int myfun_is_chain(info_t *info, char *buf, size_t *p)
 {
 	size_t o = *p;
 
@@ -144,13 +143,13 @@ int is_chain(info_t *info, char *buf, size_t *p)
 }
 
 /**
- * replace_string - is to replaces string
+ * myfun_replace_string - is to replaces string
  * @old: is a address of old string
  * @new: is a new string
  *
  * Return: 1 if replaced, or 0
  */
-int replace_string(char **old, char *new)
+int myfun_replace_string(char **old, char *new)
 {
 	free(*old);
 	*old = new;

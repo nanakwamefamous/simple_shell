@@ -1,12 +1,11 @@
-#include "shell.h"
-
+#include "my_Simple_Shell_shell.h"
 /**
- * list_len - is to determines length of linked list
+ * myfun_list_len - is to determines length of linked list
  * @h: is the pointer to first node
  *
  * Return: should return size of list
  */
-size_t list_len(const list_t *h)
+size_t myfun_list_len(const list_t *h)
 {
 	size_t n = 0;
 
@@ -19,22 +18,22 @@ size_t list_len(const list_t *h)
 }
 
 /**
- * print_list - prints all elements of a list_t linked list
+ * myfun_print_list - prints all elements of a list_t linked list
  * @h: pointer to first node
  *
  * Return: size of list
  */
-size_t print_list(const list_t *h)
+size_t myfun_print_list(const list_t *h)
 {
 	size_t n = 0;
 
 	while (h)
 	{
-		_puts(convert_number(h->num, 10, 0));
-		_putchar(':');
-		_putchar(' ');
-		_puts(h->str ? h->str : "(nil)");
-		_puts("\n");
+		myfun__puts(myfun_convert_number(h->num, 10, 0));
+		myfun__putchar(':');
+		myfun__putchar(' ');
+		myfun__puts(h->str ? h->str : "(nil)");
+		myfun__puts("\n");
 		h = h->next;
 		n++;
 	}
@@ -42,15 +41,15 @@ size_t print_list(const list_t *h)
 }
 
 /**
- * list_to_strings - is to returns an array of strings of the list->str
+ * myfun_list_to_strings - is to returns an array of strings of the list->str
  * @head: is the pointer to first node
  *
  * Return: the array of strings
  */
-char **list_to_strings(list_t *head)
+char **myfun_list_to_strings(list_t *head)
 {
 	list_t *node = head;
-	size_t n = list_len(head), o;
+	size_t n = myfun_list_len(head), o;
 	char **strs;
 	char *str;
 
@@ -61,7 +60,7 @@ char **list_to_strings(list_t *head)
 		return (NULL);
 	for (n = 0; node; node = node->next, n++)
 	{
-		str = malloc(_strlen(node->str) + 1);
+		str = malloc(myfun__strlen(node->str) + 1);
 		if (!str)
 		{
 			for (o = 0; o < n; o++)
@@ -70,7 +69,7 @@ char **list_to_strings(list_t *head)
 			return (NULL);
 		}
 
-		str = _strcpy(str, node->str);
+		str = myfun__strcpy(str, node->str);
 		strs[n] = str;
 	}
 	strs[n] = NULL;
@@ -79,20 +78,20 @@ char **list_to_strings(list_t *head)
 
 
 /**
- * node_starts_with - returns node whose string starts with prefix
+ * myfun_node_starts_with - returns node whose string starts with prefix
  * @node: pointer to list head
  * @prefix: string to match
  * @c: the next character after prefix to match
  *
  * Return: match node or null
  */
-list_t *node_starts_with(list_t *node, char *prefix, char c)
+list_t *myfun_node_starts_with(list_t *node, char *prefix, char c)
 {
 	char *p = NULL;
 
 	while (node)
 	{
-		p = starts_with(node->str, prefix);
+		p = myfun_starts_with(node->str, prefix);
 		if (p && ((c == -1) || (*p == c)))
 			return (node);
 		node = node->next;
@@ -101,13 +100,13 @@ list_t *node_starts_with(list_t *node, char *prefix, char c)
 }
 
 /**
- * get_node_index - gets the index of a node
+ * myfun_get_node_index - gets the index of a node
  * @head: pointer to list head
  * @node: pointer to the node
  *
  * Return: index of node or -1
  */
-ssize_t get_node_index(list_t *head, list_t *node)
+ssize_t myfun_get_node_index(list_t *head, list_t *node)
 {
 	size_t n = 0;
 

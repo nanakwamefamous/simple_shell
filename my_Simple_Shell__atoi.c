@@ -1,20 +1,20 @@
-#include "shell.h"
+#include "my_Simple_Shell_shell.h"
 
 /**
- * interactive - it returns true if shell is interactive mode
+ * my_interactive - it returns true if shell is my_interactive mode
  * @info: --- struct address
  *
  *
  *
- * Return: 1 if interactive mode, or 0
+ * Return: 1 if my_interactive mode, or 0
  */
-int interactive(info_t *info)
+int myfun_interactive(info_t *info)
 {
 	return (isatty(STDIN_FILENO) && info->readfd <= 2);
 }
 
 /**
- * is_delim - is to checks if character is a delimeter
+ * my_is_delim - is to checks if character is a delimeter
  *
  * @c: is char to check
  *
@@ -22,7 +22,7 @@ int interactive(info_t *info)
  *
  * Return: 1 if true, or 0
  */
-int is_delim(char c, char *delim)
+int myfun_is_delim(char c, char *delim)
 {
 	while (*delim)
 		if (*delim++ == c)
@@ -38,7 +38,7 @@ int is_delim(char c, char *delim)
  * Return: 1 if c is alphabetic, or 0
  */
 
-int _isalpha(int c)
+int myfun__isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
@@ -56,7 +56,7 @@ int _isalpha(int c)
  * Return: 0 if no numbers in string, converted number otherwise
  */
 
-int _atoi(char *s)
+int myfun__atoi(char *s)
 {
 	int n, sign = 1, flag = 0, output;
 	unsigned int result = 0;

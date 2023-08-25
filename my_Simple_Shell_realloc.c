@@ -1,14 +1,13 @@
-#include "shell.h"
-
+#include "my_Simple_Shell_shell.h"
 /**
- * _realloc - is to reallocates a block of memory
+ * myfun__realloc - is to reallocates a block of memory
  * @ptr: pointer to previous malloc'ated block
  * @old_size: byte size of previous block
  * @new_size: byte size of new block
  *
  * Return: pointer to da ol'block nameen.
  */
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
+void *myfun__realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	char *p;
 
@@ -31,10 +30,10 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 }
 
 /**
- * ffree - is to frees a string of strings
+ * myfun_ffree - is to frees a string of strings
  * @pp: is a string of strings
  */
-void ffree(char **pp)
+void myfun_ffree(char **pp)
 {
 	char **a = pp;
 
@@ -46,7 +45,7 @@ void ffree(char **pp)
 }
 
 /**
- * _memset - is to fills memory with a constant byte
+ * myfun__memset - is to fills memory with a constant byte
  * @s: is a  pointer to the memory area
  *
  * @b: is a byte to fill *s with
@@ -56,7 +55,7 @@ void ffree(char **pp)
  *
  * Return: pointer to the memory area
  */
-char *_memset(char *s, char b, unsigned int n)
+char *myfun__memset(char *s, char b, unsigned int n)
 {
 	unsigned int v;
 

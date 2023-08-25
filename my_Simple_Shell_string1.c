@@ -1,14 +1,13 @@
-#include "shell.h"
-
+#include "my_Simple_Shell_shell.h"
 /**
- * _putchar - is to writes the character c to stdout
+ * myfun__putchar - is to writes the character c to stdout
  *
  * @c: is the character to print
  *
  * Return: On success 1
  * On error, -1 is returned
  */
-int _putchar(char c)
+int myfun__putchar(char c)
 {
 	static int n;
 	static char buf[WRITE_BUF_SIZE];
@@ -25,12 +24,12 @@ int _putchar(char c)
 
 
 /**
- * _strdup - is to duplicates a string
+ * myfun__strdup - is to duplicates a string
  * @str: is a string to duplicate
  *
  * Return: to pointer to the duplicated string
  */
-char *_strdup(const char *str)
+char *myfun__strdup(const char *str)
 {
 	int L = 0;
 	char *ret;
@@ -48,12 +47,12 @@ char *_strdup(const char *str)
 }
 
 /**
- * _puts - is to prints an input string
+ * myfun__puts - is to prints an input string
  * @str: is a string to be printed
  *
  * Return: 0
  */
-void _puts(char *str)
+void myfun__puts(char *str)
 {
 	int n = 0;
 
@@ -61,19 +60,19 @@ void _puts(char *str)
 		return;
 	while (str[n] != '\0')
 	{
-		_putchar(str[n]);
+		myfun__putchar(str[n]);
 		n++;
 	}
 }
 
 /**
- * _strcpy - is to copies a string
+ * myfun__strcpy - is to copies a string
  * @dest: is a destination
  * @src: is a source
  *
  * Return: to pointer to destination
  */
-char *_strcpy(char *dest, char *src)
+char *myfun__strcpy(char *dest, char *src)
 {
 	int n = 0;
 

@@ -1,13 +1,12 @@
-#include "shell.h"
-
+#include "my_Simple_Shell_shell.h"
 /**
- * **strtow - is to splits a string into words.
+ * **myfun_strtow - is to splits a string into words.
  * @str: is a input string
  * @d: is a delimeter string
  * Return: NULL on failure
  */
 
-char **strtow(char *str, char *d)
+char **myfun_strtow(char *str, char *d)
 {
 	int n, z, o, p, numwords = 0;
 	char **s;
@@ -49,12 +48,12 @@ char **strtow(char *str, char *d)
 }
 
 /**
- * **strtow2 - is to splits a string into words
+ * **myfun_strtow2 - is to splits a string into words
  * @str: is a input string
  * @d: is a delimeter
  * Return: NULL on failure
  */
-char **strtow2(char *str, char d)
+char **myfun_strtow2(char *str, char d)
 {
 	int n, z, o, p, numwords = 0;
 	char **s;

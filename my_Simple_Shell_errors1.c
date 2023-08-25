@@ -1,14 +1,13 @@
-#include "shell.h"
-
+#include "my_Simple_Shell_shell.h"
 /**
- * _erratoi - is to converts a string to an integer
+ * myfun__erratoi - is to converts a string to an integer
  *
  * @s: is a string to be converted
  *
  * Return: always 0 if no numbers in string,
  *  or converted number -1 on error
  */
-int _erratoi(char *s)
+int myfun__erratoi(char *s)
 {
 	int n = 0;
 	unsigned long int result = 0;
@@ -31,7 +30,7 @@ int _erratoi(char *s)
 }
 
 /**
- * print_error - is to prints an error messages
+ * myfun_print_error - is to prints an error messages
  *
  * @info: is a parameter & return info struct
  *
@@ -40,19 +39,19 @@ int _erratoi(char *s)
  * Return: 0 if no numbers in string,
  * or converted number -1 on error
  */
-void print_error(info_t *info, char *estr)
+void myfun_print_error(info_t *info, char *estr)
 {
-	_eputs(info->fname);
-	_eputs(": ");
-	print_d(info->line_count, STDERR_FILENO);
-	_eputs(": ");
-	_eputs(info->argv[0]);
-	_eputs(": ");
-	_eputs(estr);
+	myfun__eputs(info->fname);
+	myfun__eputs(": ");
+	myfun_print_d(info->line_count, STDERR_FILENO);
+	myfun__eputs(": ");
+	myfun__eputs(info->argv[0]);
+	myfun__eputs(": ");
+	myfun__eputs(estr);
 }
 
 /**
- * print_d - is to function prints a decimal (integer) number (base 10)
+ * myfun_print_d - is to function prints a decimal (integer) number (base 10)
  *
  * @input: is a input
  *
@@ -60,14 +59,14 @@ void print_error(info_t *info, char *estr)
  *
  * Return: to return number of characters printed
  */
-int print_d(int input, int fd)
+int myfun_print_d(int input, int fd)
 {
-	int (*__putchar)(char) = _putchar;
+	int (*__putchar)(char) = myfun__putchar;
 	int n, count = 0;
 	unsigned int _abs_, current;
 
 	if (fd == STDERR_FILENO)
-		__putchar = _eputchar;
+		__putchar = myfun__eputchar;
 	if (input < 0)
 	{
 		_abs_ = -input;
@@ -93,7 +92,7 @@ int print_d(int input, int fd)
 }
 
 /**
- * convert_number - is to converter function, a clone of itoa
+ * myfun_convert_number - is to converter function, a clone of itoa
  *
  * @base: base
  *
@@ -101,7 +100,7 @@ int print_d(int input, int fd)
  * @num: number
  * Return: string
  */
-char *convert_number(long int num, int base, int flags)
+char *myfun_convert_number(long int num, int base, int flags)
 {
 	static char *array;
 	static char buffer[50];
@@ -130,12 +129,12 @@ char *convert_number(long int num, int base, int flags)
 }
 
 /**
- * remove_comments - is to function replaces first instance of '#' with '\0'
+ * myfun_remove_comments - is to function replaces first instance of '#' with '\0'
  * @buf: is a address of the string to modify
  *
  * Return: 0;
  */
-void remove_comments(char *buf)
+void myfun_remove_comments(char *buf)
 {
 	int n;
 

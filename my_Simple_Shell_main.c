@@ -1,5 +1,4 @@
-#include "shell.h"
-
+#include "my_Simple_Shell_shell.h"
 /**
  * main - is to entry point
  * @ac: is the arg count
@@ -26,19 +25,19 @@ int main(int ac, char **av)
 				exit(126);
 			if (errno == ENOENT)
 			{
-				_eputs(av[0]);
-				_eputs(": 0: Can't open ");
-				_eputs(av[1]);
-				_eputchar('\n');
-				_eputchar(BUF_FLUSH);
+				myfun__eputs(av[0]);
+				myfun__eputs(": 0: Can't open ");
+				myfun__eputs(av[1]);
+				myfun__eputchar('\n');
+				myfun__eputchar(BUF_FLUSH);
 				exit(127);
 			}
 			return (EXIT_FAILURE);
 		}
 		info->readfd = op;
 	}
-	populate_env_list(info);
+	myfun_populate_env_list(info);
 	read_history(info);
-	hsh(info, av);
+	myfun_hsh(info, av);
 	return (EXIT_SUCCESS);
 }

@@ -1,14 +1,14 @@
-#include "shell.h"
+#include "my_Simple_Shell_shell.h"
 
 /**
- * _eputs - is to prints an input string
+ * myfun__eputs - is to prints an input string
  *
  * @str: is a string to be printed
  *
  *
  * Return: 0
  */
-void _eputs(char *str)
+void myfun__eputs(char *str)
 {
 	int n = 0;
 
@@ -16,19 +16,19 @@ void _eputs(char *str)
 		return;
 	while (str[n] != '\0')
 	{
-		_eputchar(str[n]);
+		myfun__eputchar(str[n]);
 		n++;
 	}
 }
 
 /**
- * _eputchar - is to writes the character c to stderr
+ * myfun__eputchar - is to writes the character c to stderr
  * @c: is a character to print
  *
  * Return: On success 1, On error, -1 is returned
  * and errno is set appropriately.
  */
-int _eputchar(char c)
+int myfun__eputchar(char c)
 {
 	static int n;
 	static char buf[WRITE_BUF_SIZE];
@@ -44,7 +44,7 @@ int _eputchar(char c)
 }
 
 /**
- * _putfd - is to writes the character c to given fd
+ * myfun__putfd - is to writes the character c to given fd
  *
  * @c: is a character to print
  *
@@ -54,7 +54,7 @@ int _eputchar(char c)
  * On error, -1 is returned
  * and errno is set appropriately.
  */
-int _putfd(char c, int fd)
+int myfun__putfd(char c, int fd)
 {
 	static int n;
 	static char buf[WRITE_BUF_SIZE];
@@ -70,13 +70,13 @@ int _putfd(char c, int fd)
 }
 
 /**
- * _putsfd - prints an input string
+ * myfun__putsfd - prints an input string
  * @str: the string to be printed
  * @fd: the filedescriptor to write to
  *
  * Return: the number of chars put
  */
-int _putsfd(char *str, int fd)
+int myfun__putsfd(char *str, int fd)
 {
 	int n = 0;
 
@@ -84,7 +84,7 @@ int _putsfd(char *str, int fd)
 		return (0);
 	while (*str)
 	{
-		n += _putfd(*str++, fd);
+		n += myfun__putfd(*str++, fd);
 	}
 	return (n);
 }

@@ -1,13 +1,12 @@
-#include "shell.h"
-
+#include "my_Simple_Shell_shell.h"
 /**
- **_strncpy - is to copies a string
+ **myfun__strncpy - is to copies a string
  *@dest: is a destination string to be copied to
  *@src: is a source string
  *@n: the amount of characters to be copied
  *Return: concatenated string
  */
-char *_strncpy(char *dest, char *src, int n)
+char *myfun__strncpy(char *dest, char *src, int n)
 {
 	int u, o;
 	char *s = dest;
@@ -31,13 +30,13 @@ char *_strncpy(char *dest, char *src, int n)
 }
 
 /**
- **_strncat - is to concatenates two strings
+ **myfun__strncat - is to concatenates two strings
  *@dest: is a first string
  *@src: is a second string
  *@n: the amount of bytes to be maximally used
  *Return: concatenated string
  */
-char *_strncat(char *dest, char *src, int n)
+char *myfun__strncat(char *dest, char *src, int n)
 {
 	int v, o;
 	char *s = dest;
@@ -58,12 +57,12 @@ char *_strncat(char *dest, char *src, int n)
 }
 
 /**
- **_strchr - locates a character in a string
+ **myfun__strchr - locates a character in a string
  *@s: the string to be parsed
  *@c: the character to look for
  *Return: always return (s) a pointer to the memory area s
  */
-char *_strchr(char *s, char c)
+char *myfun__strchr(char *s, char c)
 {
 	do {
 		if (*s == c)
