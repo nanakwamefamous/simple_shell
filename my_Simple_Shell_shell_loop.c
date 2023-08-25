@@ -16,7 +16,7 @@ int myfun_hsh(info_t *info, char **av)
 	while (u != -1 && builtin_ret != -2)
 	{
 		myfun_clear_info(info);
-		if (interactive(info))
+		if (myfun_interactive(info))
 			myfun__puts("$ ");
 		myfun__eputchar(BUF_FLUSH);
 		u = myfun_get_input(info);
@@ -57,14 +57,14 @@ int myfun_find_builtin(info_t *info)
 {
 	int i, built_in_ret = -1;
 	builtin_table builtintbl[] = {
-		{"exit", _myexit},
-		{"env", _myenv},
-		{"help", _myhelp},
-		{"history", _myhistory},
-		{"setenv", _mysetenv},
-		{"unsetenv", _myunsetenv},
-		{"cd", _mycd},
-		{"alias", _myalias},
+		{"exit", myfun__myexit},
+		{"env", myfun__myenv},
+		{"help", myfun__myhelp},
+		{"history", myfun__myhistory},
+		{"setenv", myfun__mysetenv},
+		{"unsetenv", myfun__myunsetenv},
+		{"cd", myfun__mycd},
+		{"alias", myfun__myalias},
 		{NULL, NULL}
 	};
 
